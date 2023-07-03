@@ -1,27 +1,54 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.brand-red{
+  color: #E3291C !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body{
+  overflow-x: hidden;
+}
+
+.center-cont{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.Headeractive{
+  @apply absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-brandRed rounded-full;
+}
+
+.slick-slide img{
+  @apply py-[80px]
+}
+
+.drag-container {
+  cursor: grab;
+  user-select: none;
+}
+.drag-container:active {
+  cursor: grabbing;
+}
+
+.Mealslider{
+  display: flex;
+}
+
+.cursor-pointer{
+  scale: .7;
+  opacity: .5;
 }
