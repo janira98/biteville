@@ -4,7 +4,7 @@ import { Slider } from '@/components'
 const page = () => {
   return (
       <div>
-          <Slider/>
+          <Slider />
     </div>
   )
 }

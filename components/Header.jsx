@@ -1,27 +1,53 @@
+'use client';
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBagShopping,faCircle } from '@fortawesome/free-solid-svg-icons'
+import { faBagShopping, faCircle } from '@fortawesome/free-solid-svg-icons'
+import { usePathname } from 'next/navigation';
 
 import logo from '../public/logo.png'
 
 function Header() {
+    const router = usePathname()
   return (
       <div>
           <div className='flex justify-around items-center mt-4'>
               <ul className='font-semibold flex gap-[45px]'>
-                  <Link href={'/'}>
-                    <li className='relative'>Breakfast
-                        <span className='Headeractive'></span>
-                    </li> 
-                  </Link>
                   
-                  <Link href={'/lunch'}>
-                    <li>Lunch</li>
-                    </Link>
+              <Link href="/">
+                    <li className="relative">
+                    Breakfast <span className='Headeractive'></span>
+                    </li>
+                </Link>
+                <Link href="/lunch">
+                    <li className="relative">
+                    Lunch
+                    </li>
+                </Link>
+                <Link href="/Dinner">
+                    <li className="relative">
+                    Dinner
+                    </li>
+                </Link>
+
+                {/* <Link href="/">
+                    <li className="relative">
+                    Breakfast <span className={router.pathname === '/' ? 'Headeractive' : null}></span>
+                    </li>
+                </Link>
+                <Link href="/lunch">
+                    <li className="relative">
+                    Lunch <span className={router.pathname === '/lunch' ? 'Headeractive' : null}></span>
+                    </li>
+                </Link>
+                <Link href="/Dinner">
+                    <li className="relative">
+                    Dinner <span className={router.pathname === '/Dinner' ? 'Headeractive' : null}></span>
+                    </li>
+                </Link> */}
                 
-                <li>Dinner</li>
             </ul>
             <div className='relative'>
                   <FontAwesomeIcon icon={faBagShopping} className='text-[20px]' />
